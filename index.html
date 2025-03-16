@@ -10,7 +10,7 @@
         body {
             font-family: 'Dancing Script', cursive; /* Fonte romântica */
             text-align: center;
-            background: url('https://previews.123rf.com/images/9dreamstudio/9dreamstudio2209/9dreamstudio220900221/191140750-flores-de-l%C3%ADrios-brancos-com-folhas-fundo-floral.jpg') no-repeat center center fixed;
+            background: url('https://www.example.com/lirio-branco.jpg') no-repeat center center fixed;
             background-size: cover; /* A imagem vai cobrir todo o fundo */
             color: #FF0000; /* Cor vermelha para o texto */
             margin: 0;
@@ -21,6 +21,7 @@
             height: 100vh;
             flex-direction: column;
             backdrop-filter: blur(5px); /* Deixa o fundo um pouco embaçado para destacar o conteúdo */
+            overflow-x: hidden;
         }
         h1 {
             font-size: 3em;
@@ -29,23 +30,28 @@
         }
         p {
             font-size: 1.4em;
-            max-width: 600px;
+            max-width: 90%;
             line-height: 1.7;
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave no texto */
+            margin-left: auto;
+            margin-right: auto;
         }
         iframe {
             margin-top: 20px;
             border-radius: 10px;
-            max-width: 100%;
+            max-width: 90%;
+            height: auto;
         }
         .carousel {
             position: relative;
-            width: 80%;
+            width: 90%;
             max-width: 600px;
             overflow: hidden;
             margin-top: 20px;
             touch-action: pan-y;
+            margin-left: auto;
+            margin-right: auto;
         }
         .carousel img {
             width: 100%;
@@ -88,11 +94,48 @@
             background-color: #FFF;
             color: #333;
         }
+
+        /* Estilos para dispositivos móveis */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.2em;
+                padding: 0 15px;
+            }
+            iframe {
+                width: 100%;
+            }
+            .carousel {
+                width: 100%;
+                max-width: none;
+            }
+            .prev, .next {
+                font-size: 1.2em;
+                padding: 8px;
+            }
+        }
+
+        /* Estilos para telas muito pequenas */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1.1em;
+                padding: 0 10px;
+            }
+            .feedback-buttons button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Para Laiza ❤️</h1>
-    <p>Oi como anda as coisas por ai ? Por aqui estou levando, tentando ficar bem apesar de tudo, faz oque uns 4 meses do termino ? nem sei mais, parece uma eternidade. Sinceramente espero que esteja bem e que voce esteja feliz.Estou aqui so pra dizer que eu ainda te amo muito e sempre vou te amar, não que eu não te superei é que acho que não quero, não é que eu nao me envolvi com alguma pessoa, é que nao quero, não é que eu não te esqueci é que não quero, eu quero você, mas parece que só querer não é o suficiente, enfim eu te amo demais, eu te amei demais enquanto estavamos juntos e tentei ser minha melhor versão pra ti,espero que tu se sentiu amada nesse periodo, apesar de ser meu primeiro relacionamento tentei dar meu melhor. So queria dizer que te amo muito e que você é uma mulher incrivel, espero que tu seja muito feliz e amada ( POR MIM)( #naosouciumento), mas queria muito te falar isso. Te Amo muito e tenho certeza que te amarei pra sempre e sempre vou rezar por voce e querer te ver bem. Fiz essa pagina simples mas de coração espero que goste. Não esqueça de dizer se gostou ou não no final da pagina. Bjs Se cuida Te amo.></a></p>
+    <p>Oi como anda as coisas por ai ? Por aqui estou levando, tentando ficar bem apesar de tudo, faz oque uns 4 meses do término? Nem sei mais, parece uma eternidade. Sinceramente espero que esteja bem e que você esteja feliz. Estou aqui só para dizer que eu ainda te amo muito e sempre vou te amar, não que eu não te superei, é que acho que não quero... Eu quero você, mas parece que só querer não é o suficiente...</p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/sRwvB7MFDP4?autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     
     <div class="carousel" id="carousel">
@@ -110,7 +153,7 @@
 
     <!-- Formulário de Feedback -->
     <div class="feedback-buttons">
-        <form action="https://formspree.io/f/mblglkrk" method="POST">
+        <form action="https://formspree.io/f/mwkajbla" method="POST">
             <button type="submit" name="feedback" value="Gostei" class="liked">Gostei</button>
             <button type="submit" name="feedback" value="Amei" class="loved">Amei</button>
             <button type="submit" name="feedback" value="Não gostei" class="disliked">Não gostei</button>
@@ -147,3 +190,4 @@
     </script>
 </body>
 </html>
+s
