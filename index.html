@@ -15,17 +15,17 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            height: 100%;
             flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
         }
         p {
             font-size: 1.4em;
@@ -39,19 +39,17 @@
         iframe {
             margin-top: 20px;
             border-radius: 10px;
-            max-width: 90%;
-            height: auto;
-        }
-
-        /* Carrossel */
-        .carousel {
-            position: relative;
             width: 100%;
             max-width: 600px;
+            height: auto;
+        }
+        .carousel {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
             margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            z-index: 1; /* Garante que o carrossel tenha prioridade sobre outros elementos */
+            overflow: hidden;
+            border-radius: 10px;
         }
         .carousel img {
             width: 100%;
@@ -76,12 +74,8 @@
         }
         .prev { left: 10px; }
         .next { right: 10px; }
-
-        /* Estilo dos botões de feedback */
         .feedback-buttons {
             margin-top: 30px;
-            z-index: 2; /* Garante que os botões fiquem acima do carrossel */
-            position: relative;
         }
         .feedback-buttons button {
             padding: 10px 20px;
@@ -142,6 +136,16 @@
     <h1>Para Laiza ❤️</h1>
     <p>Oi como anda as coisas por ai? Por aqui estou levando, tentando ficar bem apesar de tudo, faz uns 4 meses do término? Nem sei mais, parece uma eternidade. Sinceramente espero que esteja bem e que você esteja feliz. Estou aqui só para dizer que eu ainda te amo muito e sempre vou te amar...</p>
     
+    <!-- Formulário de Feedback (No início) -->
+    <div class="feedback-buttons">
+        <form action="https://formspree.io/f/mwkajbla" method="POST">
+            <button type="submit" name="feedback" value="Gostei" class="liked">Gostei</button>
+            <button type="submit" name="feedback" value="Amei" class="loved">Amei</button>
+            <button type="submit" name="feedback" value="Não gostei" class="disliked">Não gostei</button>
+            <button type="submit" name="feedback" value="Me deixa em paz !" class="leave-me-alone">Me deixa em paz !</button>
+        </form>
+    </div>
+
     <!-- Video -->
     <iframe width="560" height="315" src="https://www.youtube.com/embed/sRwvB7MFDP4?autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     
@@ -159,16 +163,6 @@
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- Formulário de Feedback -->
-    <div class="feedback-buttons">
-        <form action="https://formspree.io/f/mwkajbla" method="POST">
-            <button type="submit" name="feedback" value="Gostei" class="liked">Gostei</button>
-            <button type="submit" name="feedback" value="Amei" class="loved">Amei</button>
-            <button type="submit" name="feedback" value="Não gostei" class="disliked">Não gostei</button>
-            <button type="submit" name="feedback" value="Me deixa em paz !" class="leave-me-alone">Me deixa em paz !</button>
-        </form>
-    </div>
-
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll(".carousel img");
@@ -181,6 +175,7 @@
 
         // Suporte a gestos de deslizar
         const carousel = document.getElementById("carousel");
+        let startX = 0;
         
         carousel.addEventListener("touchstart", (event) => {
             startX = event.touches[0].clientX;
